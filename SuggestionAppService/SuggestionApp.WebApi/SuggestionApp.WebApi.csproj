@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dd2660b7-4c39-46fd-917f-92076e350817</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SuggestionApp.BusinessLogic\SuggestionApp.BusinessLogic.csproj" />
+    <ProjectReference Include="..\SuggestionApp.DataAccess\SuggestionApp.DataAccess.csproj" />
     <ProjectReference Include="..\SuggestionApp.Utilities\SuggestionApp.Utilities.csproj" />
   </ItemGroup>
 

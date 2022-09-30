@@ -19,7 +19,10 @@ namespace SuggestionApp.DataAccess.Dtos
             Id = suggestion.Id;
             Suggestion = suggestion.Suggestion;
         }
+
     }
+
+   
 
 
 }

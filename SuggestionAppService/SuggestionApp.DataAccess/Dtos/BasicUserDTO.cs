@@ -19,5 +19,6 @@ namespace SuggestionApp.DataAccess.Dtos
             Id = user.Id;
             DisplayName = user.DisplayName;
         }
+
     }
 }
