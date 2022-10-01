@@ -10,8 +10,4 @@
     <ProjectReference Include="..\SuggestionApp.Utilities\SuggestionApp.Utilities.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Domain\" />
-  </ItemGroup>
-
 </Project>

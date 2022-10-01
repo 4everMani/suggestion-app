@@ -13,7 +13,6 @@ namespace SuggestionApp.DataAccess.Dtos
         public string LastName { get; set; }
         public string DisplayName { get; set; }
         public string EmailAddress { get; set; }
-        public int MyProperty { get; set; }
         public List<BasicSuggestionDTO> AuthoredSuggestions { get; set; } = new();
         public List<BasicSuggestionDTO> VotedSuggestions { get; set; } = new();
     }

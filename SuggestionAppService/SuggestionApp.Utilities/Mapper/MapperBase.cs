@@ -1,47 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SuggestionApp.Utilities.Mapper
+﻿namespace SuggestionApp.Utilities.Mapper
 {
-    public abstract class MapperBase<TModel, TDto> where TModel : class where TDto: new()
+    public abstract class MapperBase<TModel, TDto> where TModel : class where TDto : new()
     {
-        public TDto MapToDto(TModel model)
-        {
-            try
-            {
-                return this.MapToDtoInternal(model);
-            }
-            catch (Exception ex)
-            {
+        public abstract TDto MapToDto(TModel model);
 
-                throw ex;
-            }
-        }
 
         public IEnumerable<TDto> MapToDto(IEnumerable<TModel> modelList)
         {
-            foreach(var model in modelList)
+            foreach (var model in modelList)
             {
                 yield return this.MapToDto(model);
             }
         }
 
-        public TModel MapToModel(TDto dto)
-        {
-            try
-            {
-                return this.MapToModelInternal(dto);
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
+        public abstract TModel MapToModel(TDto dto);
 
         public IEnumerable<TModel> MapToModel(IEnumerable<TDto> dtolList)
         {
@@ -51,14 +23,5 @@ namespace SuggestionApp.Utilities.Mapper
             }
         }
 
-        public virtual TDto MapToDtoInternal(TModel model)
-        {
-            throw new Exception("method not implemented");
-        }
-
-        public virtual TModel MapToModelInternal(TDto dto)
-        {
-            throw new Exception("method not implemented");
-        }
     }
 }
