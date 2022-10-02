@@ -25,9 +25,13 @@ namespace SuggestionApp.WebApi.Infrastructure
 
             builder.Services.AddScoped<ICategoryProvider, CategoryProvider>();
             builder.Services.AddScoped<IStatusProvider, StatusProvider>();
+            builder.Services.AddScoped<IUserProvider, UserProvider>();
+            builder.Services.AddScoped<ISuggestionProvider, SuggestionProvider>();
 
             builder.Services.AddSingleton<CategoryMapper>();
             builder.Services.AddSingleton<StatusMapper>();
+            builder.Services.AddSingleton<UserMapper>();
+            builder.Services.AddSingleton<SuggestionMapper>();
         }
     }
 }
