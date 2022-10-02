@@ -1,15 +1,10 @@
 ﻿using SuggestionApp.BusinessLogic.Mappers;
 using SuggestionApp.BusinessLogic.Models;
 using SuggestionApp.DataAccess.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SuggestionApp.BusinessLogic.Domain
 {
-    public  class StatusProvider
+    public class StatusProvider : IStatusProvider
     {
         private readonly IStatusRepo _statusRepo;
 
@@ -26,6 +21,12 @@ namespace SuggestionApp.BusinessLogic.Domain
             var output = await _statusRepo.GetAllStatuses();
 
             return new List<StatusModel>(_statusMapper.MapToModel(output));
+        }
+
+        public async Task CreateStatusAsync(StatusModel statusModel)
+        {
+            var inputDto = _statusMapper.MapToDto(statusModel);
+            await _statusRepo.CreateStatus(inputDto);
         }
     }
 }

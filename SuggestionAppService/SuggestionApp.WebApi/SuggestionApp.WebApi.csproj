@@ -12,11 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Dtos\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\SuggestionApp.BusinessLogic\SuggestionApp.BusinessLogic.csproj" />
     <ProjectReference Include="..\SuggestionApp.DataAccess\SuggestionApp.DataAccess.csproj" />
     <ProjectReference Include="..\SuggestionApp.Utilities\SuggestionApp.Utilities.csproj" />

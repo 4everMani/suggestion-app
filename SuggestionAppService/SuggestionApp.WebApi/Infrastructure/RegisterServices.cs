@@ -1,4 +1,6 @@
-﻿using SuggestionApp.DataAccess.DbContext;
+﻿using SuggestionApp.BusinessLogic.Domain;
+using SuggestionApp.BusinessLogic.Mappers;
+using SuggestionApp.DataAccess.DbContext;
 using SuggestionApp.DataAccess.Repositories;
 
 namespace SuggestionApp.WebApi.Infrastructure
@@ -20,6 +22,12 @@ namespace SuggestionApp.WebApi.Infrastructure
             builder.Services.AddSingleton<IStatusRepo, StatusRepo>();
             builder.Services.AddSingleton<IUserRepo, UserRepo>();
             builder.Services.AddSingleton<ISuggestionRepo, SuggestionRepo>();
+
+            builder.Services.AddScoped<ICategoryProvider, CategoryProvider>();
+            builder.Services.AddScoped<IStatusProvider, StatusProvider>();
+
+            builder.Services.AddSingleton<CategoryMapper>();
+            builder.Services.AddSingleton<StatusMapper>();
         }
     }
 }
